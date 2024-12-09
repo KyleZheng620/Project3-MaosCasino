@@ -37,9 +37,9 @@ public class BlackjackLogic{
         for (String card: hand){
             String rank = card.split (" ")[0];
             //takes the first word of the card
-            //if the first word is Jack, Queen, or King, it adds 10
-            //if the first word is Ace it adds 11
-            //otherwise it adds the number
+            //if the first word is Jack, Queen, or King, it adds 10 to the total
+            //if the first word is Ace it adds 11 to the total
+            //otherwise it adds the number to the total
             if ("Jack Queen King".contains(rank)){
                 total+=10;
             } else if (rank.equals("Ace")){
