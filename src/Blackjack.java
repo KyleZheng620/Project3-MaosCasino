@@ -106,14 +106,14 @@ public class Blackjack{
         if (playerHandTotal>21 || (playerHandTotal<dealerHandTotal && dealerHandTotal<=21)){
             System.out.println("Dealer Wins");
             balance.subtract(betAmount);
-            System.out.println("Your current balance is : " + balance.getMoney());
+            System.out.println("Your current balance: $" + String.format("%.2f", balance.getMoney()));
         } else if (dealerHandTotal==playerHandTotal){
             System.out.println("Tie");
-            System.out.println("Your current balance is : " + balance.getMoney());
+            System.out.println("Your current balance: $" + String.format("%.2f", balance.getMoney()));
         } else{
             System.out.println("You Win");
             balance.add(betAmount);
-            System.out.println("Your current balance is : " + balance.getMoney());
+            System.out.println("Your current balance: $" + String.format("%.2f", balance.getMoney()));
         }
     }
 }

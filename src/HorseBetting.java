@@ -21,7 +21,8 @@ public class HorseBetting {
         boolean winner = false;
         printQuestion(
                 yellowHorse + "\n" + redHorse + "\n" + greenHorse + "\n" + blueHorse);
-        System.out.print("Enter the amount of money you would like to bet: $");
+        System.out.println("Your current balance: $" + String.format("%.2f", balance.getMoney()));
+        System.out.print("Enter your bet amount ($0 to skip betting): $");
         double bet = scan.nextDouble();
         bet = (int)(bet*100)/100.0;
         scan.nextLine();
@@ -116,6 +117,11 @@ public class HorseBetting {
                     greenHorse = greenHorse.substring(0,greenHorse.indexOf("🟢"))  +  greenHorsedistance + "🟢🐎" + greenHorse.substring(greenHorse.indexOf("🐎")+ 2 + greenHorseStep);
                 }
             }
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                System.err.println("Interrupted: " + e.getMessage());
+            }
 
             yellowHorseIndex = yellowHorse.indexOf("🐎");
             redHorseIndex = redHorse.indexOf("🐎");
@@ -202,4 +208,3 @@ public class HorseBetting {
         System.out.println("-------------------------------------------------------------------");
     }
 }
-

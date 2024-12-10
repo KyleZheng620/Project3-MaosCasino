@@ -48,10 +48,11 @@ public class Games {
                 System.out.println("Invalid Choice");
                 System.out.println("Choose to play \n1.) Blackjack \n2.) Slot Machines \n3.) Colosseum Betting \n4.) Horse Betting \n(-1 to quit)");
                 choice = scan.nextInt();
+                scan.nextLine();
             }
         }
         if (balance.getMoney()<= 0){
-            System.out.println("You went bankrupt :(");
+            System.out.println("The money has been given to the CCP. You went bankrupt :(. ");
         }
     }
 }
